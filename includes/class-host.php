@@ -148,22 +148,6 @@ class PST_Host {
 
         /*
         =========================
-        DEBUG LOG
-        =========================
-        */
-
-        if (defined('WP_DEBUG') && WP_DEBUG){
-
-            error_log(
-                'PST HOST PAYLOAD: ' .
-                print_r($payload,true)
-            );
-
-        }
-
-
-        /*
-        =========================
         SIGN PAYLOAD
         =========================
         */
@@ -292,22 +276,6 @@ class PST_Host {
 
         );
 
-
-        /*
-        =========================
-        DEBUG RESULT
-        =========================
-        */
-
-        if (defined('WP_DEBUG') && WP_DEBUG){
-
-            error_log(
-
-                "PST HOST RESULT: Status={$status}, TargetPostID={$target_post_id}"
-
-            );
-
-        }
 
     }
 

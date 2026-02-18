@@ -57,23 +57,6 @@ class PST_Target {
         }
 
 
-        /*
-        =====================================
-        DEBUG RECEIVED DATA
-        =====================================
-        */
-
-        if (defined('WP_DEBUG') && WP_DEBUG){
-            error_log('PST DOMAIN RECEIVED: ' . ($_SERVER['HTTP_X_PST_DOMAIN'] ?? 'NOT SET'));
-error_log('PST DOMAIN SAVED: ' . get_option('pst_allowed_domain'));
-
-
-            error_log(
-                'PST TARGET RECEIVED: ' .
-                print_r($data,true)
-            );
-
-        }
 
         /*
         =====================================
@@ -168,7 +151,7 @@ error_log('PST DOMAIN SAVED: ' . get_option('pst_allowed_domain'));
                 'post_excerpt'=>$excerpt,
 
                 'post_status'=>'publish',
-                
+
                 'post_name'=>sanitize_title($title)
 
             ]);
@@ -343,19 +326,6 @@ error_log('PST DOMAIN SAVED: ' . get_option('pst_allowed_domain'));
         }
 
 
-        /*
-        =====================================
-        DEBUG ACTION
-        =====================================
-        */
-
-        if (defined('WP_DEBUG') && WP_DEBUG){
-
-            error_log(
-                "PST TARGET ACTION: {$action} POST ID: {$post_id}"
-            );
-
-        }
 
         /*
         =====================================
